@@ -22,10 +22,11 @@ module Challenges
     "#{items_arr.last}, #{items_arr.first}"
   end
 
-  # # Challenge 5
-  # def footballPoints()
-  #   # Your code here
-  # end
+  # Challenge 5
+  # Each victory worth 3 points, each tie worth 1
+  def football_points(wins, ties)
+    (wins * 3) + ties
+  end
 
   # # Challenge 6
   # def highestCount()
