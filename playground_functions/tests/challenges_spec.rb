@@ -9,4 +9,16 @@ class TestCompareTrue < MiniTest::Unit::TestCase
     assert_equal false, Challenges.compare_true(false, false)
     assert_equal true, Challenges.compare_true(true, true)
   end
+
+  def test_calc_triangle_area
+    assert_equal 250, Challenges.calc_triangle_area(10, 50)
+    assert_equal 5, Challenges.calc_triangle_area(5, 2)
+    assert_equal 25.5, Challenges.calc_triangle_area(51, 1)
+  end
+
+  def test_split_sentence
+    assert_equal ['Hello', 'World'], Challenges.split_sentence("Hello World")
+    assert_equal ['Ruby', 'is', 'very', 'cool'], Challenges.split_sentence("Ruby is very cool")
+    assert_equal ['Ruby'], Challenges.split_sentence("Ruby")
+  end
 end
