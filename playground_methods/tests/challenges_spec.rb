@@ -61,4 +61,27 @@ class TestCompareTrue < MiniTest::Unit::TestCase
 
     assert_equal expected_result, Challenges.highest_count(input)
   end
+
+  def test_cat_and_mouse
+    cat1 = 3
+    cat2 = 2
+    mouse = 6
+    expected_result = 'cat2'
+
+    assert_equal expected_result, Challenges.cat_and_mouse(mouse, cat1, cat2)
+
+    cat1 = 6
+    cat2 = 12
+    mouse = 9
+    expected_result = 'cat1'
+
+    assert_equal expected_result, Challenges.cat_and_mouse(mouse, cat1, cat2)
+
+    cat1 = 1
+    cat2 = 1
+    mouse = 2
+    expected_result = 'the cats crash and the mouse runs away'
+
+    assert_equal expected_result, Challenges.cat_and_mouse(mouse, cat1, cat2)
+  end
 end
