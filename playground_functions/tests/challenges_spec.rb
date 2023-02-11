@@ -21,4 +21,14 @@ class TestCompareTrue < MiniTest::Unit::TestCase
     assert_equal ['Ruby', 'is', 'very', 'cool'], Challenges.split_sentence("Ruby is very cool")
     assert_equal ['Ruby'], Challenges.split_sentence("Ruby")
   end
+
+  def test_concat_name
+    array = ['Lucas', 'Cassiano', 'Ferraz', 'Paolillo']
+    array1 = ['Ferraz', 'James', 'Armando', 'Cassiano']
+    array2 = ['captain', 'my', 'captain']
+
+    assert_equal "Paolillo, Lucas", Challenges.concat_name(array)
+    assert_equal "Cassiano, Ferraz", Challenges.concat_name(array1)
+    assert_equal "captain, captain", Challenges.concat_name(array2)
+  end
 end
