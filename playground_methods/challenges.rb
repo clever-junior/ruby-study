@@ -28,10 +28,10 @@ module Challenges
     (wins * 3) + ties
   end
 
-  # # Challenge 6
-  # def highestCount()
-  #   # Your code here
-  # end
+  # Challenge 6
+  def highest_count(numbers_arr = [9, 1, 2, 3, 9, 5, 7])
+    numbers_arr.count(numbers_arr.max())
+  end
 
   # # Challenge 7
   # def catAndMouse()
@@ -57,3 +57,7 @@ module Challenges
   #   # Your code here
   # end
 end
+
+include Challenges
+
+Challenges.highest_count()
