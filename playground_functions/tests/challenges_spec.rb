@@ -31,4 +31,10 @@ class TestCompareTrue < MiniTest::Unit::TestCase
     assert_equal "Cassiano, Ferraz", Challenges.concat_name(array1)
     assert_equal "captain, captain", Challenges.concat_name(array2)
   end
+
+  def test_football_points
+    assert_equal 50, Challenges.football_points(14, 8)
+    assert_equal 5, Challenges.football_points(1, 2)
+    assert_equal 0, Challenges.football_points(0, 0)
+  end
 end
