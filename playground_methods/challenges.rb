@@ -33,10 +33,14 @@ module Challenges
     numbers_arr.count(numbers_arr.max())
   end
 
-  # # Challenge 7
-  # def catAndMouse()
-  #   # Your code here
-  # end
+  # Challenge 7
+  def cat_and_mouse(mouse, cat1, cat2)
+    if (cat1 === cat2)
+      return 'the cats crash and the mouse runs away'
+    end
+
+    return cat1 < cat2 ? "cat1" : "cat2"
+  end
 
   # # Challenge 8
   # def fizzBuzz()
@@ -57,7 +61,3 @@ module Challenges
   #   # Your code here
   # end
 end
-
-include Challenges
-
-Challenges.highest_count()
