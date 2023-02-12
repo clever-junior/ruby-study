@@ -84,4 +84,21 @@ class TestCompareTrue < MiniTest::Unit::TestCase
 
     assert_equal expected_result, Challenges.cat_and_mouse(mouse, cat1, cat2)
   end
+
+  def test_fuzz_buzz
+    input = [2, 15, 7, 9, 45]
+    expected_output = ["bug!", "fizzBuzz", "bug!", "fizz", "fizzBuzz"]
+
+    assert_equal expected_output, Challenges.fizz_buzz(input)
+
+    input = [7, 9]
+    expected_output = ['bug!', 'fizz']
+
+    assert_equal expected_output, Challenges.fizz_buzz(input)
+
+    input = [9, 25]
+    expected_output = ['fizz', 'buzz']
+
+    assert_equal expected_output, Challenges.fizz_buzz(input)
+  end
 end
