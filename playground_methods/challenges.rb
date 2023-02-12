@@ -42,10 +42,20 @@ module Challenges
     return cat1 < cat2 ? "cat1" : "cat2"
   end
 
-  # # Challenge 8
-  # def fizzBuzz()
-  #   # Your code here
-  # end
+  # Challenge 8
+  def fizz_buzz(numbers_arr)
+    numbers_arr.map do |number|
+      if number % 3 == 0 && number % 5 == 0
+        'fizzBuzz'
+      elsif number % 3 == 0
+        'fizz'
+      elsif number % 5 == 0
+        'buzz'
+      else
+        'bug!'
+      end
+    end
+  end
 
   # # Challenge 9
   # def encode()
