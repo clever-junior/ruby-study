@@ -207,4 +207,28 @@ class TestCompareTrue < MiniTest::Unit::TestCase
 
     assert_equal Challenges.generate_phone_number(invalid_input), arr_too_much_reapeat
   end
+
+  def test_triangle_check
+    assert_equal false, Challenges.triangle_check(16,9,2)
+    assert_equal false, Challenges.triangle_check(10,3,4)
+    assert_equal false, Challenges.triangle_check(6,2,2)
+
+    assert_equal false, Challenges.triangle_check(10, 13, 2)
+    assert_equal false, Challenges.triangle_check(12, 17, 4)
+    assert_equal false, Challenges.triangle_check(5, 10, 3)
+
+    assert_equal true, Challenges.triangle_check(10, 14, 8)
+    assert_equal true, Challenges.triangle_check(2, 3, 4)
+    assert_equal true, Challenges.triangle_check(16, 20, 30)
+  end
+
+  def test_hydrate
+    input =   "1 wine"
+
+    assert_equal "1 water cup", Challenges.hydrate(input)
+
+    input = "1 beer, 5 wines, 1 juice"
+
+    assert_equal "7 water cup", Challenges.hydrate(input)
+  end
 end
