@@ -15,8 +15,6 @@ module Challenges
   end
 
   # Challenge 4
-  # Write a function with the name concat_name that, when receiving an array of strings,
-  # returns a string in the format 'LAST ITEM, FIRST ITEM', regardless of the size of the array.
   def concat_name(items_arr)
     "#{items_arr.last}, #{items_arr.first}"
   end
@@ -136,5 +134,17 @@ module Challenges
         number_arr[index]
       end
     }.join()
+  end
+
+  def triangle_check(line_a, line_b, line_c)
+    if line_a < (line_b + line_c) && line_a > (line_b - line_c).abs()
+      return true
+    end
+
+    return false
+  end
+
+  def hydrate(drink)
+    "#{drink.split(//).map{|x| x[/\d+/].to_i}.compact.reduce(:+)} water cup"
   end
 end
