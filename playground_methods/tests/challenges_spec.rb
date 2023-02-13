@@ -172,4 +172,39 @@ class TestCompareTrue < MiniTest::Unit::TestCase
 
     assert_equal Challenges.tech_list([], name), "Void!"
   end
+
+  def test_generate_phone_number
+    valid_input = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]
+    expected_output = "(12) 34567-8901"
+
+    arr_incorrect_error = "Array length must be 11"
+    arr_invalid_number_error = "Array must be in 0 - 9 range"
+    arr_too_much_reapeat = "Isn't possible generate phone number"
+
+    assert_equal expected_output, Challenges.generate_phone_number(valid_input)
+
+    invalid_input = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 1, 2] # arr greater than expected
+
+    assert_equal Challenges.generate_phone_number(invalid_input), arr_incorrect_error
+
+    invalid_input = [1, 2, 3, 4, 5, 6, 7, 8] # arr less than expected
+
+    assert_equal Challenges.generate_phone_number(invalid_input), arr_incorrect_error
+
+    invalid_input = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 10] #arr have greater than 9 number
+
+    assert_equal Challenges.generate_phone_number(invalid_input), arr_invalid_number_error
+
+    invalid_input = [1, 2, 3, 4, 5, 6, 7, 8, -9, 0, 1] #arr have less than 0 number
+
+    assert_equal Challenges.generate_phone_number(invalid_input), arr_invalid_number_error
+
+    invalid_input = [1, 1, 1, 4, 5, 6, 7, 8, 9, 0, 1] #arr have repeated 3 times or more number
+
+    assert_equal Challenges.generate_phone_number(invalid_input), arr_too_much_reapeat
+
+    invalid_input = [1, 1, 1, 1, 5, 6, 7, 8, 9, 0, 1] #arr have repeated 3 times or more number
+
+    assert_equal Challenges.generate_phone_number(invalid_input), arr_too_much_reapeat
+  end
 end
