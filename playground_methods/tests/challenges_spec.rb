@@ -1,5 +1,6 @@
 require_relative "../challenges"
 require "minitest/autorun"
+require "set"
 include Challenges
 
 class TestCompareTrue < MiniTest::Unit::TestCase
@@ -120,5 +121,53 @@ class TestCompareTrue < MiniTest::Unit::TestCase
 
     assert_equal expected_output, Challenges.encode(input)
     assert_equal input, Challenges.decode(expected_output)
+  end
+
+  def test_tech_list
+    name = "Clever"
+    input = ["Rails", "Jest", "HTML", "CSS", "JavaScript", "Ruby", "Minitest"]
+    expected_output = [
+      {
+        'tech': "CSS",
+        'name': "Clever"
+      },
+      {
+        'tech': "HTML",
+        'name': "Clever"
+      },
+      {
+        'tech': "JavaScript",
+        'name': "Clever"
+      },
+      {
+        'tech': "Jest",
+        'name': "Clever"
+      },
+      {
+        'tech': "Rails",
+        'name': "Clever"
+      },
+      {
+        'tech': "Minitest",
+        'name': "Clever"
+      },
+      {
+        'tech': "Ruby",
+        'name': "Clever"
+      }
+    ]
+    tech_list = Challenges.tech_list(input, name)
+
+# https://allaboutcoding.ghinda.com/how-to-compare-two-arrays-of-hashes-by-value-in-ruby
+=begin
+  This solution uses the difference and union to check that the difference between the two arrays does not contain 7
+  any elements. The difference between the two arrays will return all elements in the first array that are not present
+  in the second array. See Array#-
+  So this solution simply makes sure that a - b is empty and b - a is also empty.
+=end
+
+    diff = ((expected_output - tech_list) + (tech_list - expected_output)).empty?
+
+    assert_equal diff, true
   end
 end
