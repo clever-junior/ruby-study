@@ -10,7 +10,6 @@ module Challenges
   end
 
   #Challenge 3
-
   def split_sentence(sentence)
     sentence.split(' ')
   end
@@ -98,7 +97,7 @@ module Challenges
 
   # Challenge 10
   def tech_list(technologies, name)
-    if !technologies
+    if technologies.empty?
       return "Void!"
     end
     technologies.map {
@@ -106,8 +105,36 @@ module Challenges
       { :tech => tech, :name => name }
     }
   end
+
+  # Challenge 11
+  def generate_phone_number(number_arr)
+    if number_arr.length < 11 || number_arr.length > 11
+      return "Array length must be 11"
+    end
+
+    if number_arr.min() < 0 || number_arr.max() > 9
+      return "Array must be in 0 - 9 range"
+    end
+
+    number_arr.tally.each do | key, value |
+      if value >= 3
+        return "Isn't possible generate phone number"
+      end
+    end
+
+    number_arr.map.with_index {
+      | number, index |
+      if index == 0
+        "(#{number}"
+      elsif index == 1
+        "#{number})"
+      elsif index == 2
+        " #{number}"
+      elsif index == 7
+        "-#{number}"
+      else
+        number_arr[index]
+      end
+    }.join()
+  end
 end
-
-include Challenges
-
-Challenges.tech_list(["React", "Jest", "HTML", "CSS", "JavaScript"], 'Clever')
