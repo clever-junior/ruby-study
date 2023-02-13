@@ -101,4 +101,24 @@ class TestCompareTrue < MiniTest::Unit::TestCase
 
     assert_equal expected_output, Challenges.fizz_buzz(input)
   end
+
+  def test_encode_decode
+    input = "hi there!"
+    expected_output = "h3 th2r2!"
+
+    assert_equal expected_output, Challenges.encode(input)
+    assert_equal input, Challenges.decode(expected_output)
+
+    input = "Hello World!"
+    expected_output = "H2ll4 W4rld!"
+
+    assert_equal expected_output, Challenges.encode(input)
+    assert_equal input, Challenges.decode(expected_output)
+
+    input = "Ruby Language!"
+    expected_output = "R5by L1ng51g2!"
+
+    assert_equal expected_output, Challenges.encode(input)
+    assert_equal input, Challenges.decode(expected_output)
+  end
 end
