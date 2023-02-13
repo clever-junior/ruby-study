@@ -169,5 +169,7 @@ class TestCompareTrue < MiniTest::Unit::TestCase
     diff = ((expected_output - tech_list) + (tech_list - expected_output)).empty?
 
     assert_equal diff, true
+
+    assert_equal Challenges.tech_list([], name), "Void!"
   end
 end
