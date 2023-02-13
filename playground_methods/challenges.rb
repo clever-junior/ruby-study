@@ -57,17 +57,51 @@ module Challenges
     end
   end
 
-  # # Challenge 9
-  # def encode()
-  #   # Your code here
-  # end
+  # Challenge 9
+  def encode(sentence)
+    sentence.split('').map {
+      |char|
+      if char == 'a'
+        1
+      elsif char == 'e'
+        2
+      elsif char == 'i'
+        3
+      elsif char == 'o'
+        4
+      elsif char == 'u'
+        5
+      else
+        char
+      end
+    }.join()
+  end
 
-  # def decode()
-  #   # Your code here
-  # end
+  def decode(enconded_sentence)
+    enconded_sentence.split('').map {
+      |char|
+      if char == '1'
+        'a'
+      elsif char == '2'
+        'e'
+      elsif char == '3'
+        'i'
+      elsif char == '4'
+        'o'
+      elsif char == '5'
+        'u'
+      else
+        char
+      end
+    }.join()
+  end
 
   # # Challenge 10
   # def techList()
   #   # Your code here
   # end
 end
+
+include Challenges
+
+Challenges.encode('hi there')
