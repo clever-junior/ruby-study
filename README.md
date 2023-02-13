@@ -1,6 +1,6 @@
 # Ruby Study
 
-Ruby study is a repository with random methods and tricks to study the language
+Ruby study is a repository with random methods and stufs to study the language
 
 
 You can fork or clone the repository and play with the challenges, be my guest to create your challenges or tricks!
