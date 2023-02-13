@@ -96,12 +96,18 @@ module Challenges
     }.join()
   end
 
-  # # Challenge 10
-  # def techList()
-  #   # Your code here
-  # end
+  # Challenge 10
+  def tech_list(technologies, name)
+    if !technologies
+      return "Void!"
+    end
+    technologies.map {
+      |tech|
+      { :tech => tech, :name => name }
+    }
+  end
 end
 
 include Challenges
 
-Challenges.encode('hi there')
+Challenges.tech_list(["React", "Jest", "HTML", "CSS", "JavaScript"], 'Clever')
