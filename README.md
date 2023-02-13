@@ -3,7 +3,7 @@
 Ruby study is a repository with random methods and stufs to study the language
 
 
-You can fork or clone the repository and play with the challenges, be my guest to create your challenges or tricks!
+You can fork or clone the repository and play with the challenges, change/refactor methods, or anything you want. Be my guest to create your challenges or tricks!
 
 
 ## Clone the repository
